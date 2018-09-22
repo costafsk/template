@@ -1,1 +1,1 @@
-console.log('Type Script up and running');
+console.log('TypeScript up and running');
