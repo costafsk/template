@@ -17,13 +17,12 @@ if (sessionStorage['token']) {
     });
     const OPTIONS = {headers: HEADERS};
     const ENDPOINT = 'https://api.spotify.com/v1/me';
-    fetch(ENDPOINT, OPTIONS)
-        .then(function(response) {
-            return response.json();
-        }).then(function(json) {
-            console.dir(json);
-            document.querySelector('div#usuario').textContent = json.display_name;
-        });
+    fetch(ENDPOINT, OPTIONS).then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        console.dir(json);
+        document.querySelector('div#usuario').textContent = json.display_name;
+    });
 }
 
 const form = document.querySelector('form');
@@ -39,11 +38,10 @@ form.addEventListener('submit', function(e) {
     });
     const OPTIONS = {headers: HEADERS};
     const ENDPOINT = `https://api.spotify.com/v1/artists/${artista}`;
-    fetch(ENDPOINT, OPTIONS)
-        .then(function(response) {
-            return response.json();
-        }).then(function(json) {
-            const img = json.images[2].url;
-            document.querySelector('img').src = img;
-        });
+    fetch(ENDPOINT, OPTIONS).then(function(response) {
+        return response.json();
+    }).then(function(json) {
+        const img = json.images[2].url;
+        document.querySelector('img').src = img;
+    });
 });
